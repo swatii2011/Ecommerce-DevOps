@@ -1,2 +1,15 @@
-[webservers]
-3.239.23.175 ansible_user=ubuntu ansible_ssh_private_key_file=/home/swati/.ssh/ecommerce-key.pem ansible_python_interpreter=/usr/bin/python3
+output "instance_id" {
+  value = aws_instance.ecommerce_server.id
+}
+
+output "public_ip" {
+  value = aws_instance.ecommerce_server.public_ip
+}
+
+output "application_url" {
+  value = "http://${aws_instance.ecommerce_server.public_ip}:5000"
+}
+
+output "ssh_command" {
+  value = "ssh -i ~/.ssh/cloudnative-key.pem ubuntu@${aws_instance.ecommerce_server.public_ip}"
+}
