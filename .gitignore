@@ -1,8 +1,10 @@
 *.pem
 *.tfstate
 *.tfstate.*
+*.tfplan
 .terraform/
 terraform.tfvars
 __pycache__/
 *.pyc
 .env
+ansible/inventory.ini
